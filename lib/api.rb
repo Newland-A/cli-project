@@ -1,7 +1,7 @@
 
-class Api
+class API
 
-  def retrieve_planets
+  def self.retrieve_planets
     response = RestClient.get('https://api.le-systeme-solaire.net/rest/bodies/')
     planet_info_hash = JSON.parse(response.body, symbolize_names:true)
     planets_array = planet_info_hash[:bodies]
@@ -11,7 +11,7 @@ class Api
     binding.pry
   end
 
-  def parse(info)
+  def parse
     planets_info.each do |info|
     response = RestClient.get(info.url)
     planet_hash = JSON.parse(response.body, symbolize_names:true)
@@ -29,5 +29,6 @@ class Api
     info.around_planet = planet_hash[:around_planet][:planet]
     binding.pry
     end
+    binding.pry
   end
 end
