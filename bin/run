@@ -1,8 +1,12 @@
 #!/usr/bin/env ruby
 
-
 require 'pry'
 require 'json'
 require 'rest-client'
 
+require_relative '../lib/api.rb'
+require_relative '../lib/cli.rb'
+require_relative '../lib/planets.rb'
+
+Api.new.retrieve_planets
 
