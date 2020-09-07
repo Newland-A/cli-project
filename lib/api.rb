@@ -1,7 +1,7 @@
 
 class API
 
-  def self.retrieve_planets
+  def retrieve_planets
     response = RestClient.get('https://api.le-systeme-solaire.net/rest/bodies/')
     planet_info_hash = JSON.parse(response.body, symbolize_names:true)
     planets_array = planet_info_hash[:bodies]

@@ -10,33 +10,41 @@ class CLI
   end
 
   def list_planets
+    #This gives all of the planets an index
     Planets.all.each.with_index(1) {| planet, i | puts "#{i}. #{planet.name}"}
   end
 
   def main
+    #this asks the user what index they would like to see
     puts "Please select a number to get the details."
+    #gets there information
     input = gets.chomp
+    #asks if the users input is between the indexs given
     if !input.to_i.between?(1, Planets.all.count)
+      #if its not it prints message, then lists the indexs again
         puts "Planet information not found, Please try again"
         list_planets
+        #starts this method over agian
         main
-    else
+    else #puts the planets information
         planet = planets.all[input.to_i-1]
         planet_details(planet)
     end
-
+#asks the user If they would like to see information on a different planet
     puts "Would you like to see another planet?"
     puts "Please enter Yes or No"
-
+#gets the users different planet information
     different_planet = gets.strip.downcase
-
+#The if/else statement whether the user said yes or no
     if different_planet == "yes"
+      #if yes then list the options again
         list_planets
+        #starts the main method over again
         main
     elsif different_planet == "no"
         puts "Your space ship is heading home!"
         exit
-    else
+    else #gives an error message and asks you to try again.
         puts "A black hole sucked you in and your lost. Please try again."
         list_planets
         main
@@ -44,6 +52,7 @@ class CLI
   end
 
   def planet_details(information)
+    #calls on the API class to retrieve the information and puts the details of each planet in the order that they are here.
     API.parse(information)
     puts "Here are the details for #{information.name}:"
     puts "#{information.id}"

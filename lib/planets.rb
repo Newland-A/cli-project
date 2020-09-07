@@ -9,11 +9,23 @@ class Planets
     self.name = information[:name]
     self.url = information[:url]
     self.id = information[:id]
+    self.english_name = information[:english_name]
     self.dimension = information[:dimension]
+    self.gravity = information[:gravity]
+    self.density = information[:density]
+    self.moons = information[:moons]
+    self.is_planet = information[:is_planet]
+    self.discovered_by = information[:discovered_by]
+    self.discovery_date = information[:discovery_date]
+    self.alternative_name = information[:alternative_name]
+    self.around_planet = information[:around_planet]
+
     @@all << self
+    
+    binding.pry
   end
 
-binding.pry
+# binding.pry
 
   def self.all
     @@all

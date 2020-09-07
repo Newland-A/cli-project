@@ -9,7 +9,7 @@ require_relative '../lib/cli.rb'
 require_relative '../lib/planets.rb'
 
 API.new.retrieve_planets
-API.new.parse
+# API.new.parse
 
-binding.pry
+# binding.pry
 
