@@ -17,16 +17,16 @@ class API
     planet_hash = JSON.parse(response.body, symbolize_names:true)
     info.id = planet_hash[:id]
     info.name = planet_hash[:name] 
-    info.english_name = planet_hash[:english_name]
+    info.english_name = planet_hash[:englishName]
     info.dimension = planet_hash[:dimension]
     info.gravity = planet_hash[:gravity]
     info.density = planet_hash[:density]
     info.moons = planet_hash[:moons]
-    info.is_planet = planet_hash[:is_planet]
-    info.discovered_by = planet_hash[:discovered_by]
-    info.discovery_date = planet_hash[:discovery_date]
-    info.alternative_name = planet_hash[:alternative_name]
-    info.around_planet = planet_hash[:around_planet][:planet]
+    info.is_planet = planet_hash[:isPlanet]
+    info.discovered_by = planet_hash[:discoveredBy]
+    info.discovery_date = planet_hash[:discoveryDate]
+    info.alternative_name = planet_hash[:alternativeName]
+    info.around_planet = planet_hash[:aroundPlanet][:planet]
     binding.pry
     end
     binding.pry

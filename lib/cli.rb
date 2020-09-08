@@ -2,9 +2,12 @@
 class CLI
 
   def run
-    puts "Welcome to the Star Wars Character Database!"
-    puts "Please choose a character to see more information:"
+    #this is thhe start of the project
+    puts "Welcome to outer Space?"
+    
+    #calls on the artist class and the calls on the method parse
     API.parse
+  #returns hash
     list_planet
     menu
   end
