@@ -7,7 +7,7 @@ class Planets
   @@all = []
 
   def initialize(planet)
-    self.name = planet[:name]
+    self.name = planet#[:englishName]
     
     @@all << self
 
@@ -15,6 +15,9 @@ class Planets
   end
 
  #binding.pry
+  # def self.planet.length
+  #   planet_array = 
+  # end
 
   def self.all
     @@all

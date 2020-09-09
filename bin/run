@@ -1,18 +1,25 @@
 #!/usr/bin/env ruby
 
 require 'pry'
-require 'json'
-require 'rest-client'
+require 'open-uri'
+# require 'rest-client'
+require 'nokogiri'
+require 'httparty'
 
-require_relative '../lib/api.rb'
-require_relative '../lib/cli.rb'
-require_relative '../lib/planets.rb'
-require_relative '../lib/details.rb'
+require_relative '../lib/api/scrape'
+require_relative '../lib/cli'
+require_relative '../lib/planets'
+require_relative '../lib/details'
 
-API.new.retrieve_planets
+Scraper.new#.retrieve_planets
 # API.new.retrieve_planet_info
 # API.new.parse
 # CLI.start
  #binding.pry
 
 # API.new.parse
+
+#CLI.new.start
+require 'open-uri'
+# require 'json'
+
